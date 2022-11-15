@@ -1,10 +1,13 @@
 import { Router } from "express";
-import basketRoutes from "./basket.routes.js"
 import categoriesRoutes from "./categories.routes.js"
-import drugsRoutes from "./drugs.routes"
+import drugsRoutes from "./drugs.routes.js"
+import userRoutes from "./user.routes.js"
+
 const router = Router()
 
 
 router.use("/drugs", drugsRoutes )
 router.use("/categories", categoriesRoutes)
-router.use("/basket", basketRoutes)
+router.use('/user', userRoutes)
+
+export default router
