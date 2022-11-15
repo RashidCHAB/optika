@@ -28,7 +28,10 @@ export default {
     getDrugs: (req, res) => {
         Drug.find().populate('category').then((a) => { res.json(a) })
     },
+    getDrugById: (req, res) => {
+        Drug.findById(req.params.id).then((a) => { res.json(a) })
+    },
     getDrugsByCategory: (req, res) => {
-        Drug.find(req.params.id)
+        Drug.find({category: req.params.id}).then((a) => { res.json(a) })
     }
 }
